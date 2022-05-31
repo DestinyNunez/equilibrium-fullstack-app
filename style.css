@@ -1,12 +1,14 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 body {
   width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-/* Header */
 
+/* Header */
 header {
   width: 100%;
   background: rgb(63, 95, 84);
@@ -16,8 +18,7 @@ header {
   justify-content: space-around;
   border: 1px solid black;
   border-radius: 7px;
-  margin: 10px;
-  margin-top: 10px;
+  margin: 15px;
   align-items: center;
 }
 
@@ -33,7 +34,7 @@ a {
 }
 
 .mission {
-    background: rgb(63, 95, 84);
+  background: rgb(63, 95, 84);
   width: 100%;
   height: 255px;
   border: solid 1px black;
@@ -51,29 +52,30 @@ a {
   flex-direction: row;
 }
 
-/* left affirmations column */
+/* left affirmations and goals column */
 .columnLeft {
   width: 33.3%;
-  height: 675px;
-  border: solid 1px black;
+  height: 625px;
+  /* border: solid 1px black; */
   border-radius: 7px;
   margin-top: 10px;
   background: white;
   color: white;
   margin-left: 15px;
+  /* padding: 10px; */
 }
-
 
 /* Top and bottom left colum sections */
 .contentA {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 50%;
-  border: 1px solid gray;
+  height: 49%;
+  border: 1px solid darkgray;
+  border-radius: 7px;
   background: gray;
+  margin-bottom: 7px;
 }
-
 
 .contentB {
   display: flex;
@@ -81,18 +83,35 @@ a {
   width: 100%;
   height: 50%;
   border: 1px solid darkgray;
+  border-radius: 7px;
   background: gray;
+  margin-top: 7px;
 }
 
 /* middle  mediatation column */
 .columnMiddle {
   width: 33.3%;
-  height: 675px;
-  border: solid 1px black;
+  height: 625px;
+  border: solid 1px darkgray;
   border-radius: 7px;
   margin-top: 10px;
   background: gray;
-    margin-left: 15px;
+  margin-left: 15px;
+  padding: 10px;
+}
+
+/* forms */
+.affirm, .gratitude, .meditation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* buttons */
+
+.btn {
+  color:  rgb(63, 95, 84);
+  border-radius: 7px;
 }
 
 h3 {
@@ -103,22 +122,27 @@ h3 {
 /* right  journal column */
 .columnRight {
   width: 33.3%;
-  height: 675px;
-  border: solid 1px black;
+  height: 625px;
+  border: solid 1px darkgray;
   border-radius: 7px;
   margin-top: 10px;
   background: gray;
   margin-left: 15px;
-    padding: 10px;
+  padding: 10px;
 }
 
 textarea {
   width: 100%;
-  height: 500px;
+  height: 300px;
   border-radius: 10px;
 }
 
 p {
   text-align: center;
   color: white;
+  margin: 10px;
+}
+
+li {
+  list-style: none;
 }
