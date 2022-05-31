@@ -143,6 +143,10 @@ p {
   margin: 10px;
 }
 
+input {
+  border-radius: 7px;
+}
+
 li {
   list-style: none;
 }
