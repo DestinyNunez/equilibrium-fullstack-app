@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Grow App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<section class="navi">
+  <nav>
+    <a href="/affirmations" class="btn btn-default btn-sm">Affirmations</a>
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  </nav>
+</section>
+
+
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1><span class="fa fa-user"></span> Profile</h1>
+      <!-- <a href="/affirmations" class="btn btn-default btn-sm">My Affirmations</a> -->
+      <!-- <a href="/logout" class="btn btn-default btn-sm">Logout</a> -->
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3 class="profilePic"><label for="profile_pic">Choose a profile picture:</label>
+            <input type="file" id="profile_pic" name="profile_pic" accept=".jpg, .jpeg, .png">
+          </h3>
+
+          <!-- this would be cool to continue doing so it works not sure how to approach images in Mongoose just yet -->
+
+          <% if (user.local.email) { %>
+          <p>
+          <p><strong class="item">id</strong>: <%= user._id %><br></p>
+          <p><strong class="item">email</strong>: <%= user.local.email %><br></p>
+          <p><strong class="item">password</strong>: <%= user.local.password %></p>
+          </p>
+
+          <a href="/unlink/local" class="btn btn-default">Unlink</a>
+          <% } else { %>
+          <a href="/connect/local" class="btn btn-default">Connect Local</a>
+          <% } %>
+
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="well">
+          <h3 class="headingThree"> Rate your mood!</h3>
+          <% if (user.local.email) { %>
+          <form action="/messagesMood" method="POST">
+            <label for="time">Time:</label>
+            <input type="time" id="timeOfDrink" name="time">
+            <p>Current Date is <input id="date" type="date" name="date">.</p>
+            <label class="message" for="message">How are you feeling?</label>
+            <input class="msgs" type="text" placeholder="Enter message here" name="msg">
+            <button class="add" type="submit">Add rating</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-6" id="second">
+        <h3>Messages</h3>
+
+        <ul class="messages">
+          <% for(var i=0; i<mood.length; i++) {%>
+          <li class="message">
+            <span><%= mood[i].date %></span>
+            <!-- <span><%= mood[i].time %></span> -->
+            <span><%= mood[i].msg %></span>
+          </li>
+          <% } %>
+        </ul>
+
+      </div>
+      <% } %>
+    </div>
+
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
