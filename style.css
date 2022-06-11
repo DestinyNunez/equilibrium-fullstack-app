@@ -97,6 +97,7 @@ a {
 }
 
 /* forms */
+
 .affirm, .gratitude, .meditation {
   display: flex;
   flex-direction: column;
@@ -124,10 +125,20 @@ h3 {
   margin-top: 10px;
   background: gray;
   margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journal {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 textarea {
-  width: 100%;
+  width: 98%;
   height: 300px;
   border-radius: 10px;
 }
@@ -138,8 +149,10 @@ p {
   margin: 10px;
 }
 
+/* buttons */
 input {
   border-radius: 7px;
+
 }
 
 li {
