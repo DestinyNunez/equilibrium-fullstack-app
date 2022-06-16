@@ -6,4 +6,5 @@
 
 
 ## How It's Made
-I used HTML and CSS+Flexbox to create the user interface.
+#### Frontend ~ I utilized HTML and CSS+Flexbox to create the user interface. When implementing my functionality I utilized Javascript.
+#### Backend ~ While creating the backend I utilized Node.js and Express to create a series of requests using CRUD principles.
