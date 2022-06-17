@@ -5,6 +5,7 @@
 
 body {
 background: lightgray;
+margin: 0px;
 }
 
 /* navigation */
@@ -33,7 +34,45 @@ nav {
   align-items: center;
 }
 
+.aboutPage {
+  border: 5px solid gray;
+  border-radius: 7px;
+  margin-left: 200px;
+  margin-right: 200px;
+  display: flex;
+  flex-direction: row;
+  background: gray;
+}
 
+.sectionInfo {
+  margin-top: 50px;
+    border-radius: 7px;
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin: 10px;
+
+}
+
+.gratitudeSec, .affirmSec, .medSec, .journalSec {
+  border: 3px solid gray;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 10px;
+  background: gray;
+}
+
+
+
+.stoneImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 40%;
+  height: auto;
+}
 
 a {
   color: white;
@@ -128,6 +167,11 @@ h1 {
 }
 
 h3 {
+  text-align: center;
+  color: white;
+}
+
+h4 {
   text-align: center;
   color: white;
 }
