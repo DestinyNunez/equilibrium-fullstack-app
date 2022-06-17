@@ -72,7 +72,6 @@ module.exports = function(app, passport, db) {
     })
   })
 
-
   // // Gratitude
   app.post('/gratitude', (req, res) => {
 
@@ -108,6 +107,8 @@ module.exports = function(app, passport, db) {
       res.redirect('/index')
     })
   })
+
+
 
 
 
