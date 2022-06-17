@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Equilibrium</title>
 </head>
@@ -10,8 +11,6 @@
 
 
 <body>
-<div class="container">
-<div class="col-sm-6 col-sm-offset-3">
   <!-- navigation -->
   <nav>
     <a href="/about">About</a>
@@ -20,12 +19,14 @@
     <a href="/login">Sign in</a>
     <a href="/signup">Sign up</a>
   </nav>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
 
     <h1><span class="fa fa-sign-in"></span> Login</h1>
 
 
     <!-- LOGIN FORM -->
-    <form action="/login" method="post">
+    <form class="loginForm" action="/login" method="post">
         <div class="form-group">
             <label>Email</label>
             <input type="text" class="form-control" name="email">
@@ -40,8 +41,7 @@
 
     <hr>
 
-    <p>Need an account? <a href="/signup">Signup</a></p>
-    <p>Or go <a href="/">home</a>.</p>
+    <p class="colorP">Need an account? <a href="/signup">Signup</a></p>
 
 
 </div>

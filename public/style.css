@@ -26,6 +26,15 @@ nav {
   color: white;
 }
 
+/* Login Info */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
 a {
   color: white;
   text-decoration: none;
@@ -154,6 +163,10 @@ p {
   text-align: center;
   color: white;
   margin: 10px;
+}
+
+.colorP {
+  color: gray;
 }
 
 /* buttons */
