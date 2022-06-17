@@ -34,17 +34,17 @@
       <p>Write down your affirmations for the day and come back through the day to reflect on them.</p>
       <form class="affirm" action="/affirmations" method="post">
         <input type="text" name="affirmString" value="">
-      <button type="submit" name="button">Submit</button>
+        <button type="submit" name="button">Submit</button>
       </form>
     </section>
     <section class="contentB">
       <h3><a href="/gratitude">Gratitude</a></h3>
 
       <p>Record 3 things you're grateful for today.</p>
-      <form class="gratitude" action="index.html" method="post">
-        <input type="text" name="" value="">
-<button type="button" name="button">Submit</button>
-  </form>
+      <form class="gratitude" action="/gratitude" method="post">
+        <input type="text" name="gratitudeString" value="">
+        <button type="submit" name="button">Submit</button>
+      </form>
     </section>
   </section>
 
@@ -52,15 +52,14 @@
   <section class="columnMiddle">
     <h3> <a href="/meditation">Meditation</a> </h3>
     <p>Track your meditation time and set reminders. </p>
-    <form class="meditation" action="index.html" method="post">
-      <input class="time" type="time" name="" value="">
-      <input class="btn" type="button" name="Submit" value="Submit">
+    <form class="meditation" action="/meditation" method="post">
+        <span>Start Time</span>
+    <input class="time" type="time" name="meditationTime" value="">
+      <span>End Time</span>
+        <input class="time" type="time" name="meditationTime" value="">
+      <button type="submit" name="button">Submit</button>
     </form>
 
-    <!-- meditation times will be logged here -->
-    <ul>
-      <li></li>
-    </ul>
 
   </section>
 
@@ -68,9 +67,9 @@
   <section class="columnRight">
     <h3> <a href="/journal">Journal</a> </h3>
     <p>How are you feeling today?</p>
-    <form class="journal" action="index.html" method="post">
-      <textarea name="name" rows="8" cols="80"></textarea>
-      <input class="btn" type="button" name="" value="Save Entry">
+    <form class="journal" action="/journal" method="post">
+      <textarea id="journalString" name="journalString" rows="8" cols="80"></textarea>
+        <button type="submit" name="button">Submit</button>
     </form>
   </section>
 </section>

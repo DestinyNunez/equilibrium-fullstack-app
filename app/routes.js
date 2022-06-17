@@ -59,26 +59,56 @@ module.exports = function(app, passport, db) {
 
 // affirmations
   app.post('/affirmations', (req, res) => {
-    console.log(req.body.affirmString)
-    console.log("testingggg")
-    console.log(req.user.local.email)
+    // console.log(req.body.affirmString)
+    // console.log("testingggg")
+    // console.log(req.user.local.email)
     db.collection('affirmations').save({
-      affirmString: req.body.affirmString,
-      email: req.user.local.email
+      affirmString: req.body.affirmString
+      // email: req.user.local.email
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/')
+      res.redirect('/index')
     })
   })
 
 
-  // Gratitude
-  // app.post('/gratitude', (req, res) => {
-  //   db.collection('gratitude').save({
-  //       res.redirect('/profile')
-  //     })
-  //   })
+  // // Gratitude
+  app.post('/gratitude', (req, res) => {
+
+    db.collection('gratitude').save({
+      gratitudeString: req.body.gratitudeString
+    }, (err, result) => {
+      if (err) return console.log(err)
+      console.log('saved to database')
+      res.redirect('/index')
+    })
+  })
+
+  // // Meditation
+  app.post('/meditation', (req, res) => {
+
+    db.collection('meditation').save({
+      meditationTime: req.body.meditationTime
+    }, (err, result) => {
+      if (err) return console.log(err)
+      console.log('saved to database')
+      res.redirect('/index')
+    })
+  })
+
+  //journal
+  app.post('/journal', (req, res) => {
+
+    db.collection('journal').save({
+    journalString: req.body.journalString
+    }, (err, result) => {
+      if (err) return console.log(err)
+      console.log('saved to database')
+      res.redirect('/index')
+    })
+  })
+
 
 
 

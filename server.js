@@ -31,6 +31,7 @@ let db
 mongoose.connect(configDB.url, (err, database) => {
   if (err) return console.log(err)
   db = database //this db is coming from where the server just connected to.
+  console.log(db, "testinggggg")
   require('./app/routes.js')(app, passport, db);//again, (./app...) spits out a function and then (app, pass..) are the arguments being passed in.
 }); // connect to our database
 
