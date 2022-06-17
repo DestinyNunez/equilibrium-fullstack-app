@@ -1,20 +1,28 @@
 <!doctype html>
 <html>
 <head>
-    <title>21 Savage Fan Site</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Equilibrium</title>
 </head>
+
+
+
 <body>
 <div class="container">
 <div class="col-sm-6 col-sm-offset-3">
+  <!-- navigation -->
+  <nav>
+    <a href="/about">About</a>
+    <a href="/login">Home</a>
+    <i class="fa-solid fa-mountain-sun"></i>
+    <a href="/login">Sign in</a>
+    <a href="/signup">Sign up</a>
+  </nav>
 
     <h1><span class="fa fa-sign-in"></span> Login</h1>
 
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-    <% } %>
 
     <!-- LOGIN FORM -->
     <form action="/login" method="post">

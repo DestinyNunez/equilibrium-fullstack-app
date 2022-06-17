@@ -4,7 +4,7 @@
 }
 
 body {
-
+background: lightgray;
 }
 
 /* navigation */
@@ -107,8 +107,9 @@ a {
 /* buttons */
 
 .btn {
-  color:  rgb(63, 95, 84);
+  background:  white;
   border-radius: 7px;
+  color: black;
 }
 
 h3 {
