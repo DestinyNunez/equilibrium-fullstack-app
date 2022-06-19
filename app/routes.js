@@ -16,7 +16,7 @@ module.exports = function(app, passport, db) {
   });
 
 
-//GET REQUESTS==========================
+//GET REQUESTS===============================================================
   //Home (index) page
   app.get('/index', function(req, res) {
     res.render('index.ejs');
@@ -35,9 +35,7 @@ module.exports = function(app, passport, db) {
       });
   });
 
-
   //Grattitude
-
   app.get("/gratitude", function (req, res) {
     db.collection('gratitude')
       .find()
@@ -50,15 +48,18 @@ module.exports = function(app, passport, db) {
       });
   });
 
-
-  //about
-  app.get('/about', function(req, res) {
-    res.render('about.ejs');
-  });
-
   //meditation
-  app.get('/meditation', function(req, res) {
-    res.render('meditation.ejs');
+
+  app.get("/meditation", function (req, res) {
+    db.collection('meditation')
+      .find()
+      .toArray((err, result) => {
+        if (err) return console.log(err);
+        res.render("meditation.ejs", {
+          user : req.user,
+          meditationTime: result,
+        });
+      });
   });
 
   //journal
@@ -74,6 +75,12 @@ module.exports = function(app, passport, db) {
       });
   });
 
+  //about
+  app.get('/about', function(req, res) {
+    res.render('about.ejs');
+  });
+
+
   // PROFILE SECTION =========================
   app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile.ejs',{
@@ -82,7 +89,7 @@ module.exports = function(app, passport, db) {
   });
 
 
-//POST REQUESTS
+//POST REQUESTS===========================================================
 
 // affirmations
 app.post('/affirmationsList', (req, res) => {
@@ -125,7 +132,7 @@ app.post('/affirmationsList', (req, res) => {
   app.post('/journal', (req, res) => {
 
     db.collection('journal').save({
-    journalString: req.body.journalString
+      journalString: req.body.journalString
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
@@ -153,7 +160,7 @@ app.post('/affirmationsList', (req, res) => {
     // })
 
 
-//DELETE ============================================================
+//DELETE REQUESTS ============================================================
 
 // affirmations
     app.delete('/affirmations', (req, res) => {
