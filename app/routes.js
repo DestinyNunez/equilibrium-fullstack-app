@@ -16,16 +16,29 @@ module.exports = function(app, passport, db) {
   });
 
 
-//GET REQUESTS
+//GET REQUESTS==========================
   //Home (index) page
   app.get('/index', function(req, res) {
     res.render('index.ejs');
   });
 
   //Affirmations
-  app.get('/affirmations', function(req, res) {
-    res.render('affirmations.ejs');
+  app.get("/affirmations", function (req, res) {
+    db.collection('affirmations')
+      .find()
+      .toArray((err, result) => {
+        if (err) return console.log(err);
+        res.render("affirmations.ejs", {
+          user : req.user,
+          affirmation: result,
+        });
+      });
   });
+  // app.get('/affirmations', function(req, res) {
+  //   const data = db.collection('affirmations')
+  //   console.log(data)
+  //   res.render('affirmations.ejs');
+  // });
 
   //Grattitude
   app.get('/gratitude', function(req, res) {
@@ -58,19 +71,32 @@ module.exports = function(app, passport, db) {
 //POST REQUESTS
 
 // affirmations
-  app.post('/affirmations', (req, res) => {
-    // console.log(req.body.affirmString)
-    // console.log("testingggg")
-    // console.log(req.user.local.email)
-    db.collection('affirmations').save({
+app.post('/affirmationsList', (req, res) => {
+  db.collection('affirmations').save(
+    {
       affirmString: req.body.affirmString
-      // email: req.user.local.email
-    }, (err, result) => {
-      if (err) return console.log(err)
-      console.log('saved to database')
-      res.redirect('/index')
-    })
+    },
+    (err, result) => {
+    if (err) return console.log(err)
+     console.log('saved to database')
+    res.redirect('/affirmations')
   })
+})
+
+
+  // app.post('/affirmations', (req, res) => {
+  //   // console.log(req.body.affirmString)
+  //   // console.log("testingggg")
+  //   // console.log(req.user.local.email)
+  //   db.collection('affirmations').save({
+  //     affirmString: req.body.affirmString
+  //     // email: req.user.local.email
+  //   }, (err, result) => {
+  //     if (err) return console.log(err)
+  //     console.log('saved to database')
+  //     res.redirect('/index')
+  //   })
+  // })
 
   // // Gratitude
   app.post('/gratitude', (req, res) => {

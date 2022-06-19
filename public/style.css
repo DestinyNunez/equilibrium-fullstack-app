@@ -35,13 +35,20 @@ nav {
 }
 
 .aboutPage {
+  width: 100%;
   border: 5px solid gray;
   border-radius: 7px;
-  margin-left: 200px;
-  margin-right: 200px;
+  /* margin-left: 200px;
+  margin-right: 200px; */
   display: flex;
   flex-direction: row;
   background: gray;
+}
+
+.missionStatement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sectionInfo {

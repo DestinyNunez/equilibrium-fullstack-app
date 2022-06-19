@@ -29,14 +29,18 @@
 
   <!-- Left column -->
   <section class="columnLeft">
+
+    <!-- affirmations -->
     <section class="contentA">
       <h3><a href="/affirmations">Affirmations</a></h3>
       <p>Write down your affirmations for the day and come back through the day to reflect on them.</p>
-      <form class="affirm" action="/affirmations" method="post">
+      <form class="affirm" action="/affirmationsList" method="post">
         <input type="text" name="affirmString" value="">
-        <button type="submit" name="button">Submit</button>
+      <button type="submit" name="button">Submit</button>
       </form>
     </section>
+
+<!-- Gratitude -->
     <section class="contentB">
       <h3><a href="/gratitude">Gratitude</a></h3>
 
@@ -50,6 +54,8 @@
 
   <!-- Middle column -->
   <section class="columnMiddle">
+
+    <!-- Meditation -->
     <h3> <a href="/meditation">Meditation</a> </h3>
     <p>Track your meditation time and set reminders. </p>
     <form class="meditation" action="/meditation" method="post">
@@ -65,6 +71,8 @@
 
   <!-- Right Column -->
   <section class="columnRight">
+
+    <!-- Journal -->
     <h3> <a href="/journal">Journal</a> </h3>
     <p>How are you feeling today?</p>
     <form class="journal" action="/journal" method="post">

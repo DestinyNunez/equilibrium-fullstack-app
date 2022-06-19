@@ -1,3 +1,34 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <title>Equilibrium</title>
+</head>
+
+  <body>
+
+    <!- navigation -->
+    <!-- <header>
+
+      <nav>
+        <a href="/about">About</a>
+        <a href="/index">Home</a>
+        <i class="fa-solid fa-mountain-sun"></i>
+        <a href="/profile">Profile</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      </nav>
+
+            <h1>Affirmations</h1>
+
+
+
+    </header>
+  </body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -20,11 +51,24 @@
         <a href="/profile">Profile</a>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
       </nav>
-
-            <h1>Affirmations</h1>
-
-
-
     </header>
+
+    <section class="row">
+      <h1>Affirmations</h1>
+      <% for(var i=0; i<affirmation.length; i++) {%>
+      <section class="col-sm-6" id="<%=affirmation[i]._id%>">
+        <ul class="messages mood">
+
+          <li class="message reflecAff">
+            <p><%= affirmation[i].affirmString %></p>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </li>
+        </ul>
+      </section>
+      <% } %>
+      </section>
   </body>
+
+<script src="main.js"></script>
+
 </html>
