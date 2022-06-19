@@ -34,16 +34,22 @@ module.exports = function(app, passport, db) {
         });
       });
   });
-  // app.get('/affirmations', function(req, res) {
-  //   const data = db.collection('affirmations')
-  //   console.log(data)
-  //   res.render('affirmations.ejs');
-  // });
+
 
   //Grattitude
-  app.get('/gratitude', function(req, res) {
-    res.render('gratitude.ejs');
+
+  app.get("/gratitude", function (req, res) {
+    db.collection('gratitude')
+      .find()
+      .toArray((err, result) => {
+        if (err) return console.log(err);
+        res.render("gratitude.ejs", {
+          user : req.user,
+          gratitude: result,
+        });
+      });
   });
+
 
   //about
   app.get('/about', function(req, res) {
@@ -56,8 +62,16 @@ module.exports = function(app, passport, db) {
   });
 
   //journal
-  app.get('/journal', function(req, res) {
-    res.render('journal.ejs');
+  app.get("/journal", function (req, res) {
+    db.collection('journal')
+      .find()
+      .toArray((err, result) => {
+        if (err) return console.log(err);
+        res.render("journal.ejs", {
+          user : req.user,
+          journal: result,
+        });
+      });
   });
 
   // PROFILE SECTION =========================
@@ -91,7 +105,7 @@ app.post('/affirmationsList', (req, res) => {
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/index')
+      res.redirect('/gratitude')
     })
   })
 
@@ -103,7 +117,7 @@ app.post('/affirmationsList', (req, res) => {
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/index')
+      res.redirect('/meditation')
     })
   })
 
@@ -115,7 +129,7 @@ app.post('/affirmationsList', (req, res) => {
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/index')
+      res.redirect('/journal')
     })
   })
 
@@ -138,10 +152,38 @@ app.post('/affirmationsList', (req, res) => {
     //   })
     // })
 
+
+//DELETE ============================================================
+
+// affirmations
     app.delete('/affirmations', (req, res) => {
       db.collection('affirmations').findOneAndDelete({id: req.body.id}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Affirmation deleted!')
+      })
+    })
+
+//Gratitude
+    app.delete('/gratitude', (req, res) => {
+      db.collection('gratitude').findOneAndDelete({id: req.body.id}, (err, result) => {
+        if (err) return res.send(500, err)
+        res.send('Gratitude deleted!')
+      })
+    })
+
+//meditation
+    app.delete('/meditation', (req, res) => {
+      db.collection('meditation').findOneAndDelete({id: req.body.id}, (err, result) => {
+        if (err) return res.send(500, err)
+        res.send('meditation deleted!')
+      })
+    })
+
+//Journal
+    app.delete('/journal', (req, res) => {
+      db.collection('journal').findOneAndDelete({id: req.body.id}, (err, result) => {
+        if (err) return res.send(500, err)
+        res.send('Journal deleted!')
       })
     })
 

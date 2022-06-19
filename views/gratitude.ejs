@@ -21,8 +21,25 @@
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
       </nav>
 
-            <h1>Gratitude</h1>
+
+            <section class="row">
+                <h1>Gratitude</h1>
+              <% for(var i=0; i<gratitude.length; i++) {%>
+              <section class="col-sm-6" id="<%=gratitude[i]._id%>">
+                <ul class="messages mood">
+
+                  <li class="message reflecAff">
+                    <p><%= gratitude[i].gratitudeString %></p>
+                    <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+                  </li>
+                </ul>
+              </section>
+              <% } %>
+              </section>
 
     </header>
+
+    <script src="main.js"></script>
+
   </body>
 </html>
