@@ -83,21 +83,6 @@ app.post('/affirmationsList', (req, res) => {
   })
 })
 
-
-  // app.post('/affirmations', (req, res) => {
-  //   // console.log(req.body.affirmString)
-  //   // console.log("testingggg")
-  //   // console.log(req.user.local.email)
-  //   db.collection('affirmations').save({
-  //     affirmString: req.body.affirmString
-  //     // email: req.user.local.email
-  //   }, (err, result) => {
-  //     if (err) return console.log(err)
-  //     console.log('saved to database')
-  //     res.redirect('/index')
-  //   })
-  // })
-
   // // Gratitude
   app.post('/gratitude', (req, res) => {
 
@@ -136,14 +121,13 @@ app.post('/affirmationsList', (req, res) => {
 
 
 
-
-
-
-    // app.put('/down', (req, res) => {
-    //   db.collection('messages')
-    //   .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
+    // app.put('/affirmations', (req, res) => {
+    //   db.collection('affirmations')
+    //   .findOneAndUpdate({
+    //     name: req.body.name,
+    //     msg: req.body.msg}, {
     //     $set: {
-    //       thumbUp:req.body.thumbUp - 1
+    //     thumbUp:req.body.thumbUp - 1
     //     }
     //   }, {
     //     sort: {_id: -1},
@@ -154,12 +138,12 @@ app.post('/affirmationsList', (req, res) => {
     //   })
     // })
 
-    // app.delete('/messages', (req, res) => {
-    //   db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
-    //     if (err) return res.send(500, err)
-    //     res.send('Message deleted!')
-    //   })
-    // })
+    app.delete('/affirmations', (req, res) => {
+      db.collection('affirmations').findOneAndDelete({id: req.body.id}, (err, result) => {
+        if (err) return res.send(500, err)
+        res.send('Affirmation deleted!')
+      })
+    })
 
     // =============================================================================
     // AUTHENTICATE (FIRST LOGIN) don't touch this and sign up ==================================================
