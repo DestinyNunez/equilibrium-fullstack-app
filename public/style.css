@@ -4,19 +4,19 @@
 }
 
 body {
-background: lightgray;
-margin: 0px;
+  background: lightgray;
+  margin: 0px;
 }
 
 /* navigation */
 nav {
   width: 100%;
-  background: rgb(63, 95, 84);
+  background: rgba(75, 192, 192, 1);
   height: 35px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 7px;
   align-items: center;
 }
@@ -34,15 +34,13 @@ nav {
   align-items: center;
 }
 
+/* Mission statment section on about page */
 .aboutPage {
   width: 100%;
-  border: 5px solid gray;
   border-radius: 7px;
-  /* margin-left: 200px;
-  margin-right: 200px; */
   display: flex;
   flex-direction: row;
-  background: gray;
+  background: white;
 }
 
 .missionStatement {
@@ -53,13 +51,13 @@ nav {
 
 .sectionInfo {
   margin-top: 50px;
-    border-radius: 7px;
-    margin-left: 150px;
-    margin-right: 150px;
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    margin: 10px;
+  border-radius: 7px;
+  margin-left: 150px;
+  margin-right: 150px;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 10px;
 
 }
 
@@ -68,7 +66,7 @@ nav {
   border-radius: 7px;
   padding: 20px;
   margin: 10px;
-  background: gray;
+  background: white;
 }
 
 
@@ -82,14 +80,19 @@ nav {
 }
 
 a {
-  color: white;
+  color: gray;
   text-decoration: none;
+}
+
+nav > a {
+  color: white;
 }
 
 h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color: white;
 }
 
 .mission {
@@ -113,11 +116,11 @@ h1 {
 
 /* left affirmations and goals column */
 .columnLeft {
-  width: 33.3%;
-  height: 625px;
+  width: 25%;
+  height: 750px;
   border-radius: 7px;
   margin-top: 10px;
-  background: white;
+  background: lightgray;
   color: white;
   /* margin-left: 15px; */
 }
@@ -130,7 +133,7 @@ h1 {
   height: 49%;
   border: 1px solid darkgray;
   border-radius: 7px;
-  background: gray;
+  background: white;
   margin-bottom: 7px;
 }
 
@@ -141,20 +144,27 @@ h1 {
   height: 50%;
   border: 1px solid darkgray;
   border-radius: 7px;
-  background: gray;
+  background: white;
   margin-top: 7px;
 }
 
 /* middle  mediatation column */
 .columnMiddle {
-  width: 33.3%;
-  height: 625px;
+  width: 50%;
+  height: 750px;
   border: solid 1px darkgray;
   border-radius: 7px;
   margin-top: 10px;
-  background: gray;
+  background: white;
   margin-left: 15px;
   padding: 10px;
+}
+
+/* meditation data graph */
+canvas {
+  margin: 30px;
+  width: 400px;
+  height:400px;
 }
 
 /* forms */
@@ -165,32 +175,25 @@ h1 {
   align-items: center;
 }
 
-/* buttons */
-
-.btn {
-  background:  white;
-  border-radius: 7px;
-  color: black;
-}
-
+/* Home page section titles */
 h3 {
   text-align: center;
-  color: white;
+  color: black;
 }
 
 h4 {
   text-align: center;
-  color: white;
+  color: black;
 }
 
 /* right  journal column */
 .columnRight {
-  width: 33.3%;
-  height: 625px;
+  width: 25%;
+  height: 750px;
   border: solid 1px darkgray;
   border-radius: 7px;
   margin-top: 10px;
-  background: gray;
+  background: white;
   margin-left: 15px;
   display: flex;
   flex-direction: column;
@@ -212,20 +215,65 @@ textarea {
 
 p {
   text-align: center;
-  color: white;
+  color: black;
   margin: 10px;
 }
 
 .colorP {
-  color: gray;
+  color: black;
 }
 
-/* buttons */
-input {
+/* Inputs for the user */
+input, textarea {
   border-radius: 7px;
-
+  background: lightgray;
+  margin: 10px;
 }
 
 li {
   list-style: none;
+}
+
+/* Profile */
+
+.profileMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  border: 2px solid gray;
+  border-radius: 7px;
+  width: 50%;
+  background: white;
+  margin: 150px;
+  padding-left: 5px;
+  padding: 20px;
+}
+
+/* .profileContainer > p {
+  text-align: left;
+} */
+
+
+
+.btn-default {
+  background: gray;
+  color: white;
+  padding: 2px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+button {
+  background: gray;
+  color: white;
+  border-radius: 4px;
 }
