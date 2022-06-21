@@ -117,10 +117,28 @@ app.post('/affirmationsList', (req, res) => {
   })
 
   // // Meditation
-  app.post('/meditation', (req, res) => {
+  function calculateMeditationTime(start, end) {
+    let startTimeComponents = start.split(":");
+    let endTimeComponents = end.split(":");
+    let startDate = new Date(0, 0, 0, startTimeComponents[0], startTimeComponents[1], 0);
+    let endDate = new Date(0, 0, 0, endTimeComponents[0], endTimeComponents[1], 0);
+    let timeDifference = endDate.getTime() - startDate.getTime();
+    let hours = Math.floor(timeDifference / 1000 / 60 / 60);
+    timeDifference -= hours * 1000 * 60 * 60;
+    let minutes = Math.floor(timeDifference / 1000 / 60);
+    let hoursToMinutes = hours * 60;
+    let totalTime = hoursToMinutes + minutes;
+    return Math.abs(totalTime);
+  }
 
+  app.post('/meditation', (req, res) => {
+    let startTime = req.body.meditationTime[0]
+    let endTime = req.body.meditationTime[1]
+    let meditationMinutes = calculateMeditationTime(startTime, endTime)
+    const currentDate =  new Date()
     db.collection('meditation').save({
-      meditationTime: req.body.meditationTime
+      meditationDate: currentDate,
+      meditationTime: meditationMinutes
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
