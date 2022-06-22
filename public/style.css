@@ -107,49 +107,34 @@ li {
   margin-right: 0px;
   padding-right: 0px;
   padding-left: 0px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  margin-top: 40px;
 }
 
 .gratitudeSec, .affirmSec, .medSec, .journalSec {
-  /* border: 5px double rgba(75, 192, 192, 1);
+  border: 5px double rgba(75, 192, 192, 1);
   border-radius: 7px; */
   padding: 20px;
   margin-left: 5px;
   margin-right: 5px;
-  /* background: white; */
+  border-radius: 7px;
+  background: white;
   width: 100%;
-  height: 295px;
 }
 
 .gratitudeSec {
-  color: white;
-  background: rgba(75, 192, 192, 1);
-  border: 5px double rgba(75, 192, 192, 1);
-  border-radius: 7px;
-}
-
-.affirmSec {
-  color: white;
-  background: rgba(255, 99, 132, 1);
-  border: 5px double rgba(255, 99, 132, 1);
-  border-radius: 7px;
-}
-
-.medSec {
-  color: white;
-  background:rgba(255, 206, 86, 1);
-  border: 5px double rgba(255, 206, 86, 1);
-  border-radius: 7px;
+  margin-left: 0;
 }
 
 .journalSec {
-  color: white;
-  background: rgba(54, 162, 235, 1);
-  border: 5px double rgba(54, 162, 235, 1);
-  border-radius: 7px;
+  margin-right: 0;
 }
 
 .hideG {
   display: none;
+
 }
 
 .hideA {
@@ -166,7 +151,6 @@ li {
 
 .hoverG:hover+.hideG {
   display: block;
-  background: white;
 }
 
 .hoverA:hover+.hideA {
