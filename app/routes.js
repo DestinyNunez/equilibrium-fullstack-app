@@ -49,14 +49,28 @@ const ObjectId = require('mongodb').ObjectID
   });
 
   //meditation
+  function getMeditationDateString(dateString) {
+    const date = new Date(dateString);
+    // Format date example: 6/22/2022
+    const formattedDate = `${(date.getMonth()+1)}/${date.getDate()}/${date.getFullYear()}`;
+    return formattedDate;
+  }
+
   app.get("/meditation", function (req, res) {
     db.collection('meditation')
       .find()
       .toArray((err, result) => {
         if (err) return console.log(err);
+        const updatedResult = result.map(data => {
+          let object = {
+            meditationTime: data.meditationTime,
+            meditationDate: getMeditationDateString(data.meditationDate)
+          };
+          return object;
+        });
         res.render("meditation.ejs", {
           user : req.user,
-          meditationTime: result,
+          meditationTime: updatedResult,
         });
       });
   });
