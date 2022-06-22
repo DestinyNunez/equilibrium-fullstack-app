@@ -4,18 +4,13 @@ console.log(trash)
 let meditationSubmitBtn = document.getElementById("submitMeditation");
 let meditationTimes = [];
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '14635e2bf0msh87cfb2daeba9304p1c373bjsn3b441c1dc920',
-		'X-RapidAPI-Host': 'healthruwords.p.rapidapi.com'
-	}
-};
-
-fetch('https://healthruwords.p.rapidapi.com/v1/quotes/?t=Mindfulness&maxR=1&size=medium', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
 
 
 getLatestMeditationChartData();
