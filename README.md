@@ -2,7 +2,10 @@
 ### Demo Day Project
 
 
-<img width="1280" alt="Screen Shot 2022-05-31 at 11 44 46 PM" src="https://user-images.githubusercontent.com/88361309/171323589-a4831748-ba86-4841-bda4-f703e84e3e5b.png">
+![home](https://user-images.githubusercontent.com/88361309/174971698-1cfefe00-be23-4d86-ba0d-c3fa355f5f64.png)
+
+![profile](https://user-images.githubusercontent.com/88361309/174971718-5ee97a63-baeb-4bd0-bf24-57f01ec8922a.png)
+
 
 
 ## How It's Made
