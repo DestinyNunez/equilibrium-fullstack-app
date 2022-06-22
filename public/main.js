@@ -18,7 +18,11 @@ fetch("https://type.fit/api/quotes")
     } else {
       author = data[i].author
     }
-    document.getElementById('inspo').innerText = `${data[i].text} - ${author}`
+
+    if (document.getElementById('inspo')) {
+      document.getElementById('inspo').innerText = `${data[i].text} - ${author}`
+    }
+
   });
 
 
@@ -86,7 +90,7 @@ function updateMeditationTimeData(data) {
     // console.log(item.meditationTime, "meditationTime");
   });
   meditationTimes = [sundayTotal, mondayTotal, tuesdayTotal, wednesdayTotal, thursdayTotal, fridayTotal, saturdayTotal]
-  console.log(meditationTimes);
+  // console.log(meditationTimes);
   updateMeditationChart();
 }
 

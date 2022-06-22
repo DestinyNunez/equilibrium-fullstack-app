@@ -22,15 +22,31 @@ const ObjectId = require('mongodb').ObjectID
     res.render('index.ejs');
   });
 
+  function getDateString(dateString) {
+    const date = new Date(dateString);
+    // Format date example: 6/22/2022
+    const formattedDate = `${(date.getMonth()+1)}/${date.getDate()}/${date.getFullYear()}`;
+    return formattedDate;
+  }
+
   //Affirmations
   app.get("/affirmations", function (req, res) {
     db.collection('affirmations')
       .find()
       .toArray((err, result) => {
         if (err) return console.log(err);
+        const updatedResult = result.map(data => {
+          const id = ObjectId(data._id)
+          let object = {
+            _id: id,
+            affirmDate: getDateString(data.affirmDate),
+            affirmString: data.affirmString
+          };
+          return object;
+        });
         res.render("affirmations.ejs", {
           user : req.user,
-          affirmation: result,
+          affirmation: updatedResult,
         });
       });
   });
@@ -41,30 +57,34 @@ const ObjectId = require('mongodb').ObjectID
       .find()
       .toArray((err, result) => {
         if (err) return console.log(err);
+        const updatedResult = result.map(data => {
+          const id = ObjectId(data._id)
+          let object = {
+            _id: id,
+            gratitudeDate: getDateString(data.gratitudeDate),
+            gratitudeString: data.gratitudeString
+          };
+          return object;
+        });
         res.render("gratitude.ejs", {
           user : req.user,
-          gratitude: result,
+          gratitude: updatedResult,
         });
       });
   });
 
   //meditation
-  function getMeditationDateString(dateString) {
-    const date = new Date(dateString);
-    // Format date example: 6/22/2022
-    const formattedDate = `${(date.getMonth()+1)}/${date.getDate()}/${date.getFullYear()}`;
-    return formattedDate;
-  }
-
   app.get("/meditation", function (req, res) {
     db.collection('meditation')
       .find()
       .toArray((err, result) => {
         if (err) return console.log(err);
         const updatedResult = result.map(data => {
+          const id = ObjectId(data._id)
           let object = {
+            _id: id,
             meditationTime: data.meditationTime,
-            meditationDate: getMeditationDateString(data.meditationDate)
+            meditationDate: getDateString(data.meditationDate)
           };
           return object;
         });
@@ -93,9 +113,18 @@ const ObjectId = require('mongodb').ObjectID
       .find()
       .toArray((err, result) => {
         if (err) return console.log(err);
+        const updatedResult = result.map(data => {
+          const id = ObjectId(data._id)
+          let object = {
+            _id: id,
+            journalDate: getDateString(data.journalDate),
+            journalString: data.journalString
+          };
+          return object;
+        });
         res.render("journal.ejs", {
           user : req.user,
-          journal: result,
+          journal: updatedResult,
         });
       });
   });
@@ -118,8 +147,10 @@ const ObjectId = require('mongodb').ObjectID
 
 // affirmations
 app.post('/affirmationsList', (req, res) => {
+  const currentDate =  new Date()
   db.collection('affirmations').save(
     {
+      affirmDate: currentDate,
       affirmString: req.body.affirmString
     },
     (err, result) => {
@@ -131,8 +162,9 @@ app.post('/affirmationsList', (req, res) => {
 
   // // Gratitude
   app.post('/gratitude', (req, res) => {
-
+    const currentDate =  new Date()
     db.collection('gratitude').save({
+      gratitudeDate: currentDate,
       gratitudeString: req.body.gratitudeString
     }, (err, result) => {
       if (err) return console.log(err)
@@ -173,8 +205,9 @@ app.post('/affirmationsList', (req, res) => {
 
   //journal
   app.post('/journal', (req, res) => {
-
+    const currentDate =  new Date()
     db.collection('journal').save({
+      journalDate: currentDate,
       journalString: req.body.journalString
     }, (err, result) => {
       if (err) return console.log(err)
