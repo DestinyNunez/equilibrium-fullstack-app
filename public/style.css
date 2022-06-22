@@ -50,8 +50,6 @@ nav {
   align-items: center;
 }
 
-
-
 ul {
   display: flex;
   flex-direction: row;
@@ -112,12 +110,75 @@ li {
 }
 
 .gratitudeSec, .affirmSec, .medSec, .journalSec {
-  border: 5px double rgba(75, 192, 192, 1);
-  border-radius: 7px;
+  /* border: 5px double rgba(75, 192, 192, 1);
+  border-radius: 7px; */
   padding: 20px;
   margin-left: 5px;
   margin-right: 5px;
+  /* background: white; */
+  width: 100%;
+  height: 295px;
+}
+
+.gratitudeSec {
+  color: white;
+  background: rgba(75, 192, 192, 1);
+  border: 5px double rgba(75, 192, 192, 1);
+  border-radius: 7px;
+}
+
+.affirmSec {
+  color: white;
+  background: rgba(255, 99, 132, 1);
+  border: 5px double rgba(255, 99, 132, 1);
+  border-radius: 7px;
+}
+
+.medSec {
+  color: white;
+  background:rgba(255, 206, 86, 1);
+  border: 5px double rgba(255, 206, 86, 1);
+  border-radius: 7px;
+}
+
+.journalSec {
+  color: white;
+  background: rgba(54, 162, 235, 1);
+  border: 5px double rgba(54, 162, 235, 1);
+  border-radius: 7px;
+}
+
+.hideG {
+  display: none;
+}
+
+.hideA {
+  display: none;
+}
+
+.hideM {
+  display: none;
+}
+
+.hideJ {
+  display: none;
+}
+
+.hoverG:hover+.hideG {
+  display: block;
   background: white;
+}
+
+.hoverA:hover+.hideA {
+  display: block;
+}
+
+.hoverM:hover+.hideM {
+  display: block;
+}
+
+.hoverJ:hover+.hideJ {
+  display: block;
 }
 
 .stoneImg {
@@ -137,7 +198,6 @@ a {
 nav>a {
   color: white;
 }
-
 
 .mission {
   background: rgb(63, 95, 84);
@@ -301,9 +361,8 @@ li {
   height: 400px;
 }
 
-.dailyInspo > img {
+.dailyInspo>img {
   border-radius: 7px;
-
 }
 
 .profileContainer {
