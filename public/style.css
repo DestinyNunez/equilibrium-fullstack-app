@@ -6,8 +6,8 @@
 body {
   background: lightgray;
   margin: 0px;
-  margin-left: 180px;
-  margin-right: 180px;
+  margin-left: 150px;
+  margin-right: 150px;
   font-size: 15px;
 }
 
@@ -62,6 +62,13 @@ ul {
   flex-wrap: wrap;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+
 li {
   display: flex;
   flex-direction: column;
@@ -72,6 +79,10 @@ li {
   border-radius: 4px;
   padding: 50px;
   font-size: 18px;
+}
+
+span {
+  text-align: center;
 }
 
 /* Mission statment section on about page */
@@ -132,7 +143,7 @@ li {
   margin-right: 0;
 }
 
-.hideG {
+/* .hideG {
   display: none;
 
 }
@@ -163,7 +174,7 @@ li {
 
 .hoverJ:hover+.hideJ {
   display: block;
-}
+} */
 
 .stoneImg {
   display: flex;

@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Equilibrium</h1>
+  <h1>Equilibrium <i class="fa-solid fa-mountain-sun"></i></h1>
   <!-- Navigation -->
   <section class="navi">
     <nav>
@@ -26,38 +27,22 @@
 
   </section>
 
-<main class="profileMain">
+  <main class="profileMain">
 
 
 
-<section class="dailyInspo">
-  <h2 id="inspo"></h2>
-    <img src="assets/tree2.png" alt="">
-</section>
+    <section class="dailyInspo">
+      <h2 id="inspo"></h2>
+      <img src="assets/tree2.png" alt="">
+    </section>
 
-
-  <section class ="profileContainer">
-    <!-- LOCAL INFORMATION -->
-        <% if (user.local.email) { %>
-          <p>
-            <p><strong class="item">id</strong>: <%= user._id %><br></p>
-            <p><strong class="item">email</strong>: <%= user.local.email %><br></p>
-            <p><strong class="item">password</strong>: <%= user.local.password %></p>
-          </p>
-
-          <a href="/unlink/local" class="btn btn-default">Unlink</a>
-          <% } else { %>
-            <a href="/connect/local" class="btn btn-default">Connect Local</a>
-            <% } %>
-
-  </section>
-</main>
+  </main>
 
 
 
 
-      <script src="main.js"></script>
+  <script src="main.js"></script>
 
-    </body>
+</body>
 
-    </html>
+</html>
