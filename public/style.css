@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
-
+  font-family: 'Comfortaa';
 }
 
 body {
   background: lightgray;
   margin: 0px;
+  margin-left: 180px;
+  margin-right: 180px;
+  font-size: 20px;
 }
 
 /* navigation */
@@ -34,6 +37,21 @@ nav {
   align-items: center;
 }
 
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 70%;
+  border: 3px solid blue;
+  border-radius: 4px;
+}
+
 /* Mission statment section on about page */
 .aboutPage {
   width: 100%;
@@ -41,12 +59,17 @@ nav {
   display: flex;
   flex-direction: row;
   background: white;
+  margin-top: 13px;
 }
 
 .missionStatement {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.missionStatement > p {
+  font-size: 16px;
 }
 
 .sectionInfo {
@@ -58,6 +81,10 @@ nav {
   flex-direction: row;
   padding: 20px;
   margin: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
 
 }
 
@@ -65,7 +92,8 @@ nav {
   border: 3px solid gray;
   border-radius: 7px;
   padding: 20px;
-  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   background: white;
 }
 
@@ -77,6 +105,8 @@ nav {
   justify-content: center;
   width: 40%;
   height: auto;
+  border-radius: 7px;
+
 }
 
 a {
@@ -164,7 +194,7 @@ h1 {
 canvas {
   margin: 30px;
   width: 400px;
-  height:400px;
+  height:300px;
 }
 
 /* forms */
@@ -176,6 +206,12 @@ canvas {
 }
 
 /* Home page section titles */
+
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
 h3 {
   text-align: center;
   color: black;

@@ -1,5 +1,5 @@
 module.exports = function(app, passport, db) {
-
+const ObjectId = require('mongodb').ObjectID
   // normal routes ===============================================================
 
   // show the home page (will also have our login links)
@@ -49,7 +49,6 @@ module.exports = function(app, passport, db) {
   });
 
   //meditation
-
   app.get("/meditation", function (req, res) {
     db.collection('meditation')
       .find()
@@ -59,6 +58,18 @@ module.exports = function(app, passport, db) {
           user : req.user,
           meditationTime: result,
         });
+      });
+  });
+
+  app.get("/meditationData", function (req, res) {
+    db.collection('meditation')
+      .find()
+      .toArray((err, result) => {
+        if (err) return console.log(err);
+        res.send({
+          user : req.user,
+          meditationTime: result,
+        })
       });
   });
 
@@ -142,7 +153,7 @@ app.post('/affirmationsList', (req, res) => {
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/meditation')
+      res.redirect('/index')
     })
   })
 
@@ -182,7 +193,10 @@ app.post('/affirmationsList', (req, res) => {
 
 // affirmations
     app.delete('/affirmations', (req, res) => {
-      db.collection('affirmations').findOneAndDelete({id: req.body.id}, (err, result) => {
+      console.log({affirmationId: req.body.id})
+      const id = ObjectId(req.body.id)
+      console.log({trash: id})
+      db.collection('affirmations').findOneAndDelete({_id: id}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Affirmation deleted!')
       })
@@ -190,7 +204,8 @@ app.post('/affirmationsList', (req, res) => {
 
 //Gratitude
     app.delete('/gratitude', (req, res) => {
-      db.collection('gratitude').findOneAndDelete({id: req.body.id}, (err, result) => {
+      const id = ObjectId(req.body.id)
+      db.collection('gratitude').findOneAndDelete({_id: id}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Gratitude deleted!')
       })
@@ -198,7 +213,8 @@ app.post('/affirmationsList', (req, res) => {
 
 //meditation
     app.delete('/meditation', (req, res) => {
-      db.collection('meditation').findOneAndDelete({id: req.body.id}, (err, result) => {
+      const id = ObjectId(req.body.id)
+      db.collection('meditation').findOneAndDelete({_id: id}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('meditation deleted!')
       })
@@ -206,7 +222,8 @@ app.post('/affirmationsList', (req, res) => {
 
 //Journal
     app.delete('/journal', (req, res) => {
-      db.collection('journal').findOneAndDelete({id: req.body.id}, (err, result) => {
+      const id = ObjectId(req.body.id)
+      db.collection('journal').findOneAndDelete({_id: id}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Journal deleted!')
       })
