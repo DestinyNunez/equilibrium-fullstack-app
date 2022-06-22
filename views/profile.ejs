@@ -12,10 +12,9 @@
 </head>
 
 <body>
-
+    <h1>Equilibrium</h1>
   <!-- Navigation -->
   <section class="navi">
-
     <nav>
       <a href="/about">About</a>
       <a href="/index">Home</a>
@@ -23,19 +22,22 @@
       <a href="/profile">Profile</a>
       <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </nav>
+    <h2>Profile</h2>
+
   </section>
 
 <main class="profileMain">
+
+
+
+<section class="dailyInspo">
+  <h2 id="inspo"></h2>
+    <img src="assets/tree2.png" alt="">
+</section>
+
+
   <section class ="profileContainer">
     <!-- LOCAL INFORMATION -->
-    <div class="col-sm-6">
-      <div class="well">
-        <!-- <h3 class="profilePic"><label for="profile_pic">Choose a profile picture:</label>
-          <input type="file" id="profile_pic" name="profile_pic" accept=".jpg, .jpeg, .png">
-        </h3> -->
-
-
-
         <% if (user.local.email) { %>
           <p>
             <p><strong class="item">id</strong>: <%= user._id %><br></p>
@@ -43,13 +45,11 @@
             <p><strong class="item">password</strong>: <%= user.local.password %></p>
           </p>
 
-          <!-- <a href="/unlink/local" class="btn btn-default">Unlink</a> -->
+          <a href="/unlink/local" class="btn btn-default">Unlink</a>
           <% } else { %>
             <a href="/connect/local" class="btn btn-default">Connect Local</a>
             <% } %>
 
-          </div>
-        </div>
   </section>
 </main>
 

@@ -111,7 +111,7 @@ app.post('/affirmationsList', (req, res) => {
     (err, result) => {
     if (err) return console.log(err)
      console.log('saved to database')
-    res.redirect('/affirmations')
+    res.redirect('/index')
   })
 })
 
@@ -123,7 +123,7 @@ app.post('/affirmationsList', (req, res) => {
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/gratitude')
+      res.redirect('/index')
     })
   })
 
@@ -165,28 +165,9 @@ app.post('/affirmationsList', (req, res) => {
     }, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
-      res.redirect('/journal')
+      res.redirect('/index')
     })
   })
-
-
-
-    // app.put('/affirmations', (req, res) => {
-    //   db.collection('affirmations')
-    //   .findOneAndUpdate({
-    //     name: req.body.name,
-    //     msg: req.body.msg}, {
-    //     $set: {
-    //     thumbUp:req.body.thumbUp - 1
-    //     }
-    //   }, {
-    //     sort: {_id: -1},
-    //     upsert: true
-    //   }, (err, result) => {
-    //     if (err) return res.send(err)
-    //     res.send(result)
-    //   })
-    // })
 
 
 //DELETE REQUESTS ============================================================
@@ -229,8 +210,8 @@ app.post('/affirmationsList', (req, res) => {
       })
     })
 
-    // =============================================================================
-    // AUTHENTICATE (FIRST LOGIN) don't touch this and sign up ==================================================
+
+    // AUTHENTICATE (FIRST LOGIN) ==================================================
     // =============================================================================
 
     // locally --------------------------------

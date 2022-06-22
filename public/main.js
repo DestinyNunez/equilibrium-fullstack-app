@@ -4,12 +4,21 @@ console.log(trash)
 let meditationSubmitBtn = document.getElementById("submitMeditation");
 let meditationTimes = [];
 
+
+
 fetch("https://type.fit/api/quotes")
   .then(function(response) {
     return response.json();
   })
   .then(function(data) {
-    console.log(data);
+    let i = Math.floor(Math.random() * data.length - 1);
+    let author;
+    if (data[i].author == null) {
+       author = "Unknown Author"
+    } else {
+      author = data[i].author
+    }
+    document.getElementById('inspo').innerText = `${data[i].text} - ${author}`
   });
 
 

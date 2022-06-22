@@ -8,7 +8,15 @@ body {
   margin: 0px;
   margin-left: 180px;
   margin-right: 180px;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+h1 {
+  font-size: 25px;
+  width: 20%;
+  height: auto;
+  border-radius: 4px;
+  color: rgba(75, 192, 192, 1)
 }
 
 /* navigation */
@@ -30,6 +38,11 @@ nav {
   color: white;
 }
 
+.fa-trash {
+  font-size: 14px;
+  color: rgb(210, 106, 121);
+}
+
 /* Login Info */
 .loginForm {
   display: flex;
@@ -37,19 +50,30 @@ nav {
   align-items: center;
 }
 
+
+
 ul {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 li {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 30%;
-  height: 70%;
-  border: 3px solid blue;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border: 5px double rgba(75, 192, 192, 1);
   border-radius: 4px;
+  padding: 50px;
+  font-size: 18px;
 }
 
 /* Mission statment section on about page */
@@ -68,7 +92,7 @@ li {
   justify-content: center;
 }
 
-.missionStatement > p {
+.missionStatement>p {
   font-size: 16px;
 }
 
@@ -85,19 +109,16 @@ li {
   margin-right: 0px;
   padding-right: 0px;
   padding-left: 0px;
-
 }
 
 .gratitudeSec, .affirmSec, .medSec, .journalSec {
-  border: 3px solid gray;
+  border: 5px double rgba(75, 192, 192, 1);
   border-radius: 7px;
   padding: 20px;
   margin-left: 5px;
   margin-right: 5px;
   background: white;
 }
-
-
 
 .stoneImg {
   display: flex;
@@ -106,7 +127,6 @@ li {
   width: 40%;
   height: auto;
   border-radius: 7px;
-
 }
 
 a {
@@ -114,16 +134,10 @@ a {
   text-decoration: none;
 }
 
-nav > a {
+nav>a {
   color: white;
 }
 
-h1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: white;
-}
 
 .mission {
   background: rgb(63, 95, 84);
@@ -194,11 +208,10 @@ h1 {
 canvas {
   margin: 30px;
   width: 400px;
-  height:300px;
+  height: 300px;
 }
 
 /* forms */
-
 .affirm, .gratitude, .meditation {
   display: flex;
   flex-direction: column;
@@ -206,7 +219,6 @@ canvas {
 }
 
 /* Home page section titles */
-
 h2 {
   text-align: center;
   padding: 10px;
@@ -252,7 +264,8 @@ textarea {
 p {
   text-align: center;
   color: black;
-  margin: 10px;
+  /* margin: 10px; */
+  padding: 8px;
 }
 
 .colorP {
@@ -271,12 +284,28 @@ li {
 }
 
 /* Profile */
-
 .profileMain {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.dailyInspo {
+  display: flex;
+  flex-direction: row;
+  border: 5px double rgba(75, 192, 192, 1);
+  border-right: none;
+  border-radius: 7px;
+  align-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.dailyInspo > img {
+  border-radius: 7px;
+
+}
+
 .profileContainer {
   display: flex;
   flex-direction: column;
@@ -290,9 +319,6 @@ li {
   padding-left: 5px;
   padding: 20px;
 }
-
-
-
 
 .btn-default {
   background: gray;

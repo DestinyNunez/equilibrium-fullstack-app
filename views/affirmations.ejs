@@ -15,7 +15,6 @@
 
     <!-- navigation -->
     <header>
-
       <nav>
         <a href="/about">About</a>
         <a href="/index">Home</a>
@@ -24,16 +23,18 @@
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
       </nav>
     </header>
-
+  <h2>Affirmations</h2>
     <section class="row">
-      <h1>Affirmations</h1>
       <% for(var i=0; i<affirmation.length; i++) {%>
-      <section class="col-sm-6" id="<%=affirmation[i]._id%>">
+      <section  id="<%=affirmation[i]._id%>">
         <ul class="messages mood">
 
           <li class="message reflecAff">
-            <p><%= affirmation[i].affirmString %></p>
-            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+              <p><%= affirmation[i].affirmString %></p>
+
+
+            <span><i class="fa fa-trash" aria-hidden="true"> Delete</i></span>
+
           </li>
         </ul>
       </section>

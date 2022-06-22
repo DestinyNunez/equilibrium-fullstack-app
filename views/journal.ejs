@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous"
     referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
   <title>Equilibrium</title>
 </head>
 
-  <body>
+<body>
 
-    <!-- navigation -->
-    <header>
+  <!-- navigation -->
+  <header>
 
-      <nav>
-        <a href="/about">About</a>
-        <a href="/index">Home</a>
-        <i class="fa-solid fa-mountain-sun"></i>
-        <a href="/profile">Profile</a>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </nav>
+    <nav>
+      <a href="/about">About</a>
+      <a href="/index">Home</a>
+      <i class="fa-solid fa-mountain-sun"></i>
+      <a href="/profile">Profile</a>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </nav>
+    <h2>Journal Entries</h2>
+    <section class="row">
 
-            <section class="row">
-                          <h1>Journal Entries</h1>
-              <% for(var i=0; i<journal.length; i++) {%>
-              <section class="col-sm-6" id="<%=journal[i]._id%>">
-                <ul class="messages mood">
+      <% for(var i=0; i<journal.length; i++) {%>
+      <section class="col-sm-6" id="<%=journal[i]._id%>">
+        <ul class="messages mood">
 
-                  <li class="message reflecAff">
-                    <p><%= journal[i].journalString %></p>
-                    <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-                  </li>
-                </ul>
-              </section>
-              <% } %>
-              </section>
+          <li class="message reflecAff">
+            <p><%= journal[i].journalString %></p>
+          <span><i class="fa fa-trash" aria-hidden="true"> Delete</i></span>
+          </li>
+        </ul>
+      </section>
+      <% } %>
+    </section>
 
-    </header>
+  </header>
 
-    <script src="main.js"></script>
-  </body>
+  <script src="main.js"></script>
+</body>
+
 </html>
